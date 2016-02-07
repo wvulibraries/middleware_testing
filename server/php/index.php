@@ -4,7 +4,7 @@ date_default_timezone_set("UTC");
 
 $url = sprintf("http://testing.lib.wvu.edu/mike/middleware_test/index.%s",strtolower($_GET['type']));
 
-var_dump($_GET['type'](file_get_contents($url)));
+exit(json_encode($_GET['type'](file_get_contents($url))));
 
 function xml($content) {
 	$content = simplexml_load_string($content);
