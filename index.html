@@ -1,0 +1,87 @@
+<html>
+
+<head>
+	<title>Testing Middle Ware</title>
+
+	<script src="jquery-2.2.0.min.js"></script>
+
+	<script>
+
+	$(document).ready(function() {
+		$.ajax({
+			dataType: "json",
+			url: "https://testing.lib.wvu.edu/mike/middleware_test/php/index.php?type=xml",
+			success: function(responseData) {
+				$("#xmlDate").html(responseData.content.date);
+				$("#xmlContent").html(responseData.content.message);
+			},
+			error: function(jqXHR,error,exception) {
+				$("#error").html("Error.");
+			},
+			async:   true
+
+		});
+	});
+
+	$(document).ready(function() {
+		$.ajax({
+			dataType: "json",
+			url: "https://testing.lib.wvu.edu/mike/middleware_test/php/index.php?type=json",
+			success: function(responseData) {
+				$("#jsonDate").html(responseData.content.date);
+				$("#jsonContent").html(responseData.content.message);
+			},
+			error: function(jqXHR,error,exception) {
+				$("#error").html("Error.");
+			},
+			async:   true
+
+		});
+	});
+
+	$(document).ready(function() {
+		$.ajax({
+			dataType: "json",
+			url: "https://testing.lib.wvu.edu/mike/middleware_test/php/index.php?type=html",
+			success: function(responseData) {
+				$("#htmlDate").html(responseData.content.date);
+				$("#htmlContent").html(responseData.content.message);
+			},
+			error: function(jqXHR,error,exception) {
+				$("#error").html("Error.");
+			},
+			async:   true
+
+		});
+	});
+	</script>
+
+</head>
+
+<body>
+
+<h1>Middleware Testing</h1>
+
+<p id="error"></p>
+
+<div>
+	<h2>XML Test</h2>
+	<p id="xmlDate"></p>
+	<p id="xmlContent"></p>
+</div>
+
+<div>
+	<h2>JSON Test</h2>
+	<p id="jsonDate"></p>
+	<p id="jsonContent"></p>
+</div>
+
+<div>
+	<h2>HTML Test</h2>
+	<p id="htmlDate"></p>
+	<p id="htmlContent"></p>
+</div>
+
+</body>
+
+</html>
