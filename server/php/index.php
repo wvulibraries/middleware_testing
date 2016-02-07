@@ -2,8 +2,6 @@
 
 date_default_timezone_set("UTC");
 
-$_GET['type'] = "html";
-
 $url = sprintf("http://testing.lib.wvu.edu/mike/middleware_test/index.%s",strtolower($_GET['type']));
 
 var_dump($_GET['type'](file_get_contents($url)));
