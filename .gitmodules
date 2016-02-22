@@ -1,0 +1,3 @@
+[submodule "server/node"]
+	path = server/node
+	url = https://ddavisgraphics@github.com/ddavisgraphics/nodeJSMiddleWareTests
